@@ -8,4 +8,4 @@ Per utilizzare GYMtool è necessario aver installato pycharm sul proprio pc.
 ```
 pip install -r requirements.txt
 ```
-5. Avviare il progetto 
+5. Avviare il progetto
