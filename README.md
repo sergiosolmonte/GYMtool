@@ -36,4 +36,4 @@ pip install -r requirements.txt
 flask run
 ```
 
-**Per il correto funzionamento del CDN occorre essere coonessi alla rete.
+**Per il correto funzionamento del CDN occorre essere conessi alla rete.
