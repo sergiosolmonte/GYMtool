@@ -3,7 +3,7 @@ Progetto realizzato in flask
 Per utilizzare GYMtool è necessario aver installato pycharm sul proprio pc.
 1. Scaricare il codice come .zip 
 2. Avviare pycharm e aprire il **progetto** GYMtool contenuto nell'omonima cartella
-3. Aprire "edit configuration" e selezionare "Custom" -> poi scrivere app.py :
+3. Aprire "edit configuration", aggiungere un nuovo **flask server**, selezionare "Custom" -> poi scrivere app.py :
 ![alt text](https://github.com/sergiosolmonte/GYMtool/blob/main/custom.png?raw=true)
 4.Nel terminale di Pycharm ora bisogna creare un virtual env:
 Prima installando (se si ha la versione di python3)
