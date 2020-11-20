@@ -1,4 +1,5 @@
 # GYMtool
+Progetto realizzato in flask
 Per utilizzare GYMtool è necessario aver installato pycharm sul proprio pc.
 1. Scaricare il codice come .zip 
 2. Avviare pycharm e aprire il **progetto** GYMtool contenuto nell'omonima cartella
