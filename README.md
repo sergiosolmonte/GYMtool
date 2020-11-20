@@ -36,4 +36,4 @@ pip install -r requirements.txt
 flask run
 ```
 
-n.b. per una corretta visualizzazione, utilizzarlo online dato l'utilizzo di font bootstrap e immagini dinamicamente caricate.
+**Per il correto funzionamento del CDN occorre essere coonessi alla rete.
