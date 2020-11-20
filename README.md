@@ -1,6 +1,6 @@
 # GYMtool
 Per utilizzare GYMtool è necessario aver installato pycharm sul proprio pc.
-1. Scaricare il come .zip 
+1. Scaricare il codice come .zip 
 2. Avviare pycharm e aprire il **progetto** GYMtool
 3. Aprire "edit configuration" e selezionare "Custom" -> poi scrivere app.py :
 ![alt text](https://github.com/sergiosolmonte/GYMtool/blob/main/custom.png?raw=true)
