@@ -25,11 +25,11 @@ source venv/bin/activate
 ```
 (con windows)
 ```
-pip install -r requirements.txt
+venv\Scripts\activate
 ```
 5. Nel terminale di pycharm effettuare il caricamento dei requirements:
 ```
-venv\Scripts\activate
+pip install -r requirements.txt
 ```
 6. Avviare il progetto con il comando:
 ```
