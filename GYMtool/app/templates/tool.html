@@ -1,0 +1,36 @@
+{% extends "user.html" %}
+{% block head %}
+     <script src="/static/functions.js"></script>
+{% endblock %}
+ {% block userpage %}
+     <div class="appCont">
+         <div class="app" >
+             <a href="{{ url_for('bmiApp', username=current_user.username) }}"><img  src="../../static/appImages/bmi.png" id="app1" ></a>
+         </div>
+         <div class="appName">BMI</div>
+     </div>
+     <div class="appCont">
+         <div class="app" >
+             <a href="{{ url_for('idealWeight', username=current_user.username) }}"><img  src="../../static/appImages/idealWeight.png" id="app1" ></a>
+         </div>
+         <div class="appName">Ideal Weight</div>
+     </div>
+     <div class="appCont">
+         <div class="app" >
+             <a href="{{ url_for('macros', username=current_user.username) }}"><img src="../../static/appImages/macro.png" id="app1" ></a>
+         </div>
+         <div class="appName">Macro Nutrients</div>
+     </div>
+     <div class="appCont">
+         <div class="app" >
+             <a href="{{ url_for('bodyfat', username=current_user.username) }}"><img src="../../static/appImages/massa_grassa.png" id="app1" ></a>
+         </div>
+         <div class="appName">Body Fat</div>
+     </div>
+     <div class="appCont">
+         <div class="app" >
+             <a href="{{ url_for('kcal', username=current_user.username) }}"><img src="../../static/appImages/kcal.png" id="app1" ></a>
+         </div>
+         <div class="appName">Kcal App</div>
+     </div>
+{% endblock %}

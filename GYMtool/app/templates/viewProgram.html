@@ -1,0 +1,23 @@
+{% extends "user.html" %}
+{% block head %}
+     <script src="/static/functions.js"></script>
+{% endblock %}
+{% block userpage %}
+    <h2 id="descriptionApp"> <a href="{{ url_for('archivio', username=current_user.username) }}"> <i class="fas fa-arrow-alt-circle-left" ></i> </a>{{ program.name }}:</h2>
+    <div class="pluto"><span style="display:none">{{ program_id }}</span></div>
+    <div id="printTable" class="container">
+        <div class="div2">
+            <div class="content">
+               <div id="leftA" onclick=scrollLeft1()>
+                    <i class=" leftA fas fa-chevron-left fa-2x"></i>
+                </div>
+                <div id="rightA" onclick=scrollRight1()>
+                    <i class=" rightA fas fa-chevron-right fa-2x"></i>
+                </div>
+                <div id="pippo">
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

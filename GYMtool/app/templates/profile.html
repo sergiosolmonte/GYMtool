@@ -1,0 +1,100 @@
+{% extends "user.html" %}
+{% block head %}
+     <script src="/static/functions.js"></script>
+{% endblock %}
+ {% block userpage %}
+ <div class="profilePage">
+     <div class="container rounded bg-white mt-5" style="border:1px solid #cccccc;margin-top:-40px;margin-bottom: 15%;padding: 0">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle" width="200px" height="200px" src="{{ user.avatar(128) }}"><span class="font-weight-bold">{{ current_user.username }}</span><span class="text-black-50">{{ current_user.email }}</span><span> </span></div>
+            </div>
+            <div class="col-md-5 border-right"  id="profile" style="height: 90%">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+
+                        <h4 class="text-right">Profile </h4>
+                        <div class="d-flex justify-content-between align-items-center experience" id="editProfile"><span class="border px-3 p-1 add-experience"><i class="fas fa-cog"></i>&nbsp;Edit</span></div><br>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Name</label><br><span>{{ current_user.firstname }}</span></div>
+                        <div class="col-md-6"><label class="labels">Surname</label><br><span>{{ current_user.lastname }}</span></div>
+                        <div class="col-md-6"><label class="labels">Birthdate</label><br><span>{{ current_user.birthdate.strftime('%d/%m/%Y') }}</span></div>
+
+                    </div>
+{#                    <div class="row mt-3">#}
+{#                        <div class="col-md-12"><label class="labels">Username</label><br><span>{{ current_user.username }}</span></div>#}
+{#                        <div class="col-md-12"><label class="labels">Email ID</label><br><span>{{ current_user.email }}</span></div>#}
+{#                    </div>#}
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Weight</label><br>
+                        {% if current_user.weight %}
+                            <span>{{ current_user.weight }}</span><i>kg</i>
+                        {% else %}
+                            <span> 80</span><i>kg</i>
+                        {% endif %}
+                        </div>
+                        <div class="col-md-6"><label class="labels">Height</label><br>
+                        {% if current_user.height %}
+                            <span>{{ current_user.height }}</span><i>cm</i>
+                        {% else %}
+                            <span> 170</span><i>cm</i>
+                        {% endif %}
+                        </div>
+                        <div class="col-md-6"><label class="labels">Waist</label><br>
+                        {% if current_user.waist %}
+                            <span>{{ current_user.waist }}</span><i>cm</i>
+                        {% else %}
+                            <span> 90</span><i>cm</i>
+                        {% endif %}
+                        </div>
+                        <div class="col-md-6"><label class="labels">Neck</label><br>
+                        {% if current_user.neck %}
+                            <span>{{ current_user.neck }}</span><i>cm</i>
+                        {% else %}
+                            <span> 50</span><i>cm</i>
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 border-right"  id="prSetting" style="display: none">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Profile Settings</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value="{{ current_user.firstname }}"></div>
+                        <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" placeholder="surname" value="{{ current_user.lastname }}"></div>
+                        <div class="col-md-6"><label class="labels">Birthdate</label><input type="date" class="form-control"  value={{ current_user.birthdate.strftime('%Y-%m-%d') }} ></div>
+                    </div>
+                     <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Username</label><br><span>{{ current_user.username }}</span></div>
+                        <div class="col-md-12"><label class="labels">Email ID</label><br><span>{{ current_user.email }}</span></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-6"><label class="labels">Weight</label><input type="text" class="form-control" placeholder="Weight" value="{% if current_user.weight %}{{ current_user.weight }}{% endif %}"><i>kg</i></div>
+                        <div class="col-md-6"><label class="labels">Height</label><input type="text" class="form-control" placeholder="Height" value="{% if current_user.height %}{{ current_user.height }}{% endif %}"><i>cm</i></div>
+                        <div class="col-md-6"><label class="labels">Waiste</label><input type="text" class="form-control" placeholder="Waist" value="{% if current_user.waist %}{{ current_user.waist }}{% endif %}"><i>cm</i></div>
+                        <div class="col-md-6"><label class="labels">Neck</label><input type="text" class="form-control" placeholder="Neck" value="{% if current_user.neck %}{{ current_user.neck }}{% endif %}"><i>cm</i></div>
+                    </div>
+
+
+                    <a href="#"><div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" id="saveProfile"> Save Profile</button></div></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center experience"><span>Interest</span></div><br>
+                     <ol>
+                        {% for j in join %}
+                            <li><div class="col-md-12">{{ j.name }}</div><br></li>
+                        {% endfor %}
+                     </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

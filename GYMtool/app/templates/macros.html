@@ -1,0 +1,29 @@
+{% extends "user.html" %}
+{% block head %}
+     <script src="/static/functions.js"></script>
+{% endblock %}
+ {% block userpage %}
+
+<div class="container-bmi" id="macros" >
+    <h2 id="descriptionApp" style="z-index: 10000"> <a href="{{ url_for('tool', username=current_user.username) }} "> <i class="fas fa-arrow-alt-circle-left" ></i> </a> </h2>
+
+    <div id="imageResult"> <img src="../../../static/toolImages/food_pyramid.jpg" style="width: 100%;height: 100%"></div>
+    <div id="textResult" style="overflow-y: scroll;overflow-x: hidden; height: 78%">
+        <a style="font-size: 25px ; font-weight: bold">Proteins: <br> </a>
+        <a id="proteins"></a>
+        <br>
+        <a style="font-size: 25px ; font-weight: bold">Fruits: <br></a>
+        <a id="fruits"></a>
+        <br>
+        <a style="font-size: 25px ; font-weight: bold">Beverage: <br></a>
+        <a id="beverage"></a>
+        <br>
+        <a style="font-size: 25px ; font-weight: bold">Snacks: <br></a>
+        <a id="snacks"></a>
+        <br>
+        <a style="font-size: 25px ; font-weight: bold">Vegetables: <br></a>
+        <a id="vegetables"></a>
+    </div>
+</div>
+
+{% endblock %}

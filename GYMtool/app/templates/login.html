@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <img src="{{ url_for('static', filename='user.svg') }}" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form action="" method="post">
+            {{ form.csrf_token }}
+            {{ form.username(size=32,class_='fadeIn second', placeholder='username') }}
+            {{ form.password(size=32,class_='fadeIn third', placeholder='password') }}
+            <div class="fadeIn fourth">
+                <p href="#" class="left" >Forgot Password?</p>
+                <p class="right">{{ form.remember_me.label }} {{ form.remember_me() }}</p>
+            </div>
+            <div class="center" >
+                {{ form.submit(class='fadeIn fifth') }}
+            </div>
+        </form>
+
+        <!-- Sign In -->
+        <div id="formFooter">
+          <p>New user?<a class="underlineHover" href="{{ url_for('register') }}">Click to register!</a></p>
+        </div>
+
+      </div>
+    </div>
+{% endblock %}

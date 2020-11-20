@@ -1,0 +1,25 @@
+{% extends "user.html" %}
+{% block head %}
+     <script src="/static/functions.js"></script>
+{% endblock %}
+{% block userpage %}
+
+     <div class="container">
+        <h2 class="great">Workout Programs</h2>
+        <div class="list-group programCont">
+        {% for p in programs  %}
+            <div id="program">
+            <a href="{{ url_for('viewProgram',username=current_user.username,program_id=p.id) }}">
+                <div class="programName">
+                    <div style="width:90%;float:left;color:#ff5600"class="list-group-item list-group-item-action">{{ p.name }}</div>
+                    <div class="rightIcon"><i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{#<a href="{{ url_for('viewProgram',username=current_user.username,program_id=p.id) }}"><a>#}
+
+{% endblock %}
+

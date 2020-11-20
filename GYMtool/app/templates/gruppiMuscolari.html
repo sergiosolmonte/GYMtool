@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block head %}  <link href="{{ url_for('static', filename='functions.js') }}"/>{% endblock %}
+{% block content %}
+
+    <div class="row">
+        <div class="div1 side-menu" id="side-muscle" style="width: 200px">
+            <div id="accordion wrapper">
+                {% for c in category %}
+                    <div class="card">
+                        <div class="card-header ">
+                            <a class="collapsed card-link " data-toggle="collapse" href="#collapse{{c.id}}">
+                                <h4 class="muscle" id="{{ c.id }}">{{ c.name }}</h4>
+                            </a>
+                        </div>
+                    {% for j in join%}
+                        {% if j.Exercise.category == c.id %}
+                            <div id="collapse{{c.id}}" class="collapse" >
+                                <div class="card-body">
+                                    <div>
+                                         <a >{{ j.Exercise.name }}<span style="display:none">{{ j.Exercise.id }}</span></a>
+                                         <img class="icon-navBar" src="static/exImage/{{ j.Exercise.id }}.png">
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="div2 "  >
+            <p ><h3 style="padding-left: 37%; width:100%">Discover your body!</h3></p>
+            <div><img style="display: block"class="gruppi_muscolari " src="static/muscoliSpento.png" ></div>
+             <div id="overlay" style="display: none">
+                    <i class="far fa-times-circle" id="closePopUp" ></i>
+                    <span>Ciaone</span>
+             </div>
+
+
+        </div>
+    </div>
+    <script src="../static/functions.js"></script>
+
+{% endblock %}

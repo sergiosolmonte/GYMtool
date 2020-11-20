@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% block head %}
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="{{ url_for('static', filename='functions.js') }}"/>
+{% endblock %}
+{% block content %}
+
+    <div class="row" >
+        <div class="div1 side-menu" data-toggle="collapse">
+            <div id="accordion wrapper">
+                {% for c in category %}
+                    <div class="card">
+                        <div class="card-header">
+                            <a class="collapsed card-link" data-toggle="collapse" href="#collapse{{c.id}}">
+                                <h4>{{ c.name }}</h4>
+                            </a>
+                        </div>
+                    {% for j in join%}
+                        {% if j.Exercise.category == c.id %}
+                            <div id="collapse{{c.id}}" class="collapse" {#  data-parent="#accordion"#}>
+                                <div class="card-body">
+                                    <div>
+                                         <a class="card-text draggable">{{ j.Exercise.name }}<span style="display:none">{{ j.Exercise.id }}</span></a>
+                                         <img class="icon-navBar" src="static/exImage/{{ j.Exercise.id }}.png" >
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="div3">
+            <div class="cont">
+                <div id="colSidebar" class="fas fa-angle-left fa-3x"></div>
+            </div>
+        </div>
+        <div class="div2">
+            <p><h4 class="great">Welcome to GYMtool editor</h4></p>
+            <p>
+                <h3 class="great" id="planTitle" contentEditable="true">{{ current_user.username +"'s Plan"}}</h3>
+            </p>
+             <p>
+                <h6 class="great">(Double-click to remove exercise and save to add in your archive)</h6>
+            </p>
+
+
+            <div class="content">
+                {# --------Tabella----------- #}
+
+                <div id="leftB">
+                    <i class=" leftB fas fa-chevron-left fa-2x"></i>
+                </div>
+                <div id="rightB">
+                    <i class=" rightB fas fa-chevron-right fa-2x"></i>
+                </div>
+
+                <div id="pippo">
+                    <div class="workoutPlan" id="editor">
+                        <div class="daysHeader">
+                            <div class="day" id="day1"> <a id="textD"> Giorno 1</a></div>
+                            <div class="day" id="day2"> <a id="textD"> Giorno 2</a><i class="far fa-times-circle" id="rDay"></i></div>
+                            <div class="day" id="day3"> <a id="textD"> Giorno 3</a><i class="far fa-times-circle" id="rDay"></i></div>
+                        </div>
+
+                        <div id="planBody">
+                            <div class="exHeader">
+                                <div class="exDescr">
+                                    <div class="descr principal"><div class="testo"> Exercise</div></div>
+                                    <div class="descr set"> <div class="testo">Set </div></div>
+                                    <div class="descr rep"> <div class="testo">Rep</div></div>
+                                    <div class="descr im"> <div class="testo">Time</div></div>
+                                </div>
+                                <div class="exDescr" id="day2">
+                                    <div class="descr principal"><div class="testo"> Exercise</div></div>
+                                    <div class="descr set"> <div class="testo">Set </div></div>
+                                    <div class="descr rep"> <div class="testo">Rep</div></div>
+                                    <div class="descr im"> <div class="testo">Time</div></div>
+                                </div>
+                                <div class="exDescr" id="day3">
+                                    <div class="descr principal"><div class="testo"> Exercise</div></div>
+                                    <div class="descr set"> <div class="testo">Set </div></div>
+                                    <div class="descr rep"> <div class="testo">Rep</div></div>
+                                    <div class="descr im"> <div class="testo">Time</div></div>
+                                </div>
+                            </div>
+                             <div class="exercise">
+                                <div class="ex_cell">
+                                    <div class="container" >
+                                         <div class="cell droppable " type="droppable"></div>
+                                         <div class="cell set" contenteditable="true" id="textareaTable"></div>
+                                         <div class="cell rep" contenteditable="true" id="textareaTable"></div>
+                                         <div class="cell im" contenteditable="true" id="textareaTable"></div>
+                                    </div>
+                                </div>
+                                <div class="ex_cell" id="day2">
+                                    <div class="container" >
+                                         <div class="cell droppable " type="droppable"></div>
+                                         <div class="cell set" contenteditable="true" id="textareaTable"></div>
+                                         <div class="cell rep" contenteditable="true" id="textareaTable"></div>
+                                         <div class="cell im" contenteditable="true" id="textareaTable"></div>
+                                    </div>
+                                </div>
+                                  <div class="ex_cell" id="day3">
+                                    <div class="container" >
+                                         <div class="cell droppable " type="droppable"></div>
+                                         <div class="cell set" contenteditable="true" id="textareaTable"></div>
+                                         <div class="cell rep" contenteditable="true" id="textareaTable"></div>
+                                         <div class="cell im" contenteditable="true" id="textareaTable"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="buttonCont">
+                        <button class="btn btn-dark " id="addRow" >Add Row <i class="fas fa-arrow-alt-to-bottom"></i></button>
+                        <button class="btn btn-dark" id="rRow">Remove Row </button>
+                    </div>
+                    <div class="buttonCont">
+                        <button class="btn btn-dark" id="addDay">Add Day <i class="fas fa-plus"></i></button>
+                        <button class="btn" id="save"><a href=""></a>Save</button>
+                        <button class="btn btn-dark" id="Trash" ><a>Delete All <i class="far fa-trash-alt"></i></a></button>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <span id="usernameEditor" style="display: none">{{ current_user.username }}</span>
+    <script src="../static/functions.js"></script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#{% extends 'base.html' %}#}
+{#{% block head %}#}
+{#    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>#}
+{#    <link href="{{ url_for('static', filename='functions.js') }}"/>#}
+{#{% endblock %}#}
+{#{% block content %}#}
+{##}
+{#    <div class="row">#}
+{#        <div class="div1 side-menu" data-toggle="collapse">#}
+{#            <div id="accordion wrapper">#}
+{#                {% for c in category %}#}
+{#                    <div class="card">#}
+{#                        <div class="card-header">#}
+{#                            <a class="collapsed card-link" data-toggle="collapse" href="#collapse{{c.id}}">#}
+{#                                <h4>{{ c.name }}</h4>#}
+{#                            </a>#}
+{#                        </div>#}
+{#                    {% for j in join%}#}
+{#                        {% if j.Exercise.category == c.id %}#}
+{#                            <div id="collapse{{c.id}}" class="collapse" {#  data-parent="#accordion"#}>#}
+{#                                <div class="card-body">#}
+{#                                    <div>#}
+{#                                         <a class="card-text draggable">{{ j.Exercise.name }}</a>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        {% endif %}#}
+{#                    {% endfor %}#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="div3">#}
+{#            <div class="cont">#}
+{#                <div id="colSidebar" class="fas fa-angle-left fa-3x"></div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="div2">#}
+{#            <p><h4 class="great">Welcome to GYMtool editor</h4></p>#}
+{#            <p><h3 class="great">{{ current_user.username +"'s Plan"}}</h3></p>#}
+{#            <div class="content">#}
+                {# --------Tabella----------- #}
+{#               <div class="workoutPlan" id="myTabella">#}
+{#                    <div class="daysHeader">#}
+{#                        <div class="day"> Giorno 1</div>#}
+{#                        <div class="day"> Giorno 2</div>#}
+{#                        <div class="day"> Giorno 3</div>#}
+{#                    </div>#}
+{##}
+{#                    <div id="planBody">#}
+{#                        <div class="exHeader">#}
+{#                            <div class="exDescr">#}
+{#                                <div class="descr principal"><div class="testo"> Exercise</div></div>#}
+{#                                <div class="descr rep"> <div class="testo">Set </div></div>#}
+{#                                <div class="descr set"> <div class="testo">Rep</div></div>#}
+{#                                <div class="descr im"> <div class="testo">Time</div></div>#}
+{#                            </div>#}
+{#                            <div class="exDescr">#}
+{#                                <div class="descr principal"><div class="testo"> Exercise</div></div>#}
+{#                                <div class="descr rep"> <div class="testo">Set </div></div>#}
+{#                                <div class="descr set"> <div class="testo">Rep</div></div>#}
+{#                                <div class="descr im"> <div class="testo">Time</div></div>#}
+{#                            </div>#}
+{#                            <div class="exDescr">#}
+{#                                <div class="descr principal"><div class="testo"> Exercise</div></div>#}
+{#                                <div class="descr rep"> <div class="testo">Set </div></div>#}
+{#                                <div class="descr set"> <div class="testo">Rep</div></div>#}
+{#                                <div class="descr im"> <div class="testo">Time</div></div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="exercise">#}
+{#                            <div class="ex_cell">#}
+{#                                <div class="container" style="border:1px solid red">#}
+{#                                    <input class="prova" type="text"><a>Pippo</a>#}
+{#                                    <div class="cell droppable " type="droppable"></div>#}
+{#                                    <div class="cell rep"></div>#}
+{#                                    <div class="cell set"></div>#}
+{#                                    <div class="cell im"></div>#}
+{#                                </div>#}
+{##}
+{#                            </div>#}
+{#                           <div class="ex_cell droppable">#}
+{#                                <div class="cell droppable" type="droppable"></div>#}
+{#                                <div class="cell rep"></div>#}
+{#                                <div class="cell set"></div>#}
+{#                                <div class="cell im"></div>#}
+{#                            </div>#}
+{#                            <div class="ex_cell droppable">#}
+{#                                <div class="cell droppable" type="droppable"></div>#}
+{#                                <div class="cell rep"></div>#}
+{#                                <div class="cell set"></div>#}
+{#                                <div class="cell im"></div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="buttonCont">#}
+{#                <button class="btn btn-dark" id="irow" >Add Row</button>#}
+{#                <button class="btn btn-dark" id="icol">Add Day</button>#}
+{#                <button class="btn btn-dark" id="rRow">Remove Row</button>#}
+{#                <button class="btn btn-dark" id="rDay">Remove Day</button>#}
+{#                <button class='left'><</button>#}
+{#                <button class='right'>></button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{##}
+{#    <script src="../static/functions.js"></script>#}
+{##}
+{#{% endblock %}#}

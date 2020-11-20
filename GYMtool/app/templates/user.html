@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head %}
+    <link href="{{ url_for('static', filename='functions.js') }}"/>
+     <script src="/static/functions.js"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid divMenu">
+        <nav id="navbar">
+{#            <div class="userAvatar"><img class="profileImage" src="/static/meme_harold.jpg"></div>#}
+            <ul class="list-group dark">
+                <li class="list-group-item menuOpt dark"><a id="linkA" class="menu-link linked" href="{{ url_for('profile', username=current_user.username) }}"><i class="fas fa-user mr"></i><span>Profilo</span></a></li>
+                <li class="list-group-item menuOpt dark"><a id="linkB" class="menu-link linked" href="{{ url_for('archivio', username=current_user.username) }}"><i class="fas fa-folder-open mr"></i><span>Archivio</span></a></li>
+                <li class="list-group-item menuOpt dark"><a id="linkC" class="menu-link linked" href="{{ url_for('tool', username=current_user.username) }}"><i class="fas fa-toolbox mr"></i><span>myTool</span></a></li>
+                <li class="list-group-item menuOpt dark"><a id="linkD" class="menu-link linked" href="{{ url_for('messaggi', username=current_user.username) }}"><i class="fas fa-comments mr"></i><span>Messaggi</span></a></li>
+                <li class="list-group-item menuOpt dark"><a class="menu-link" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt mr"></i><span>Logout</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container-fluid divPage">
+        {% block userpage %}
+
+        {% endblock %}
+    </div>
+{% endblock %}
