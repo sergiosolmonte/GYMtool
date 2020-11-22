@@ -39,7 +39,7 @@ flask run
 **Per il correto funzionamento del CDN occorre essere conessi alla rete.
 
 
------CONFIGURAZIONE INTERPRETE PYTHON-----
+-----CONFIGURAZIONE INTERPRETE PYTHON----- <br>
 È possibile avviare il progetto anche direttamente con il run di pycharm, basta configurare il corretto interprete.
 1. Recarsi in *File -> Setting* 
 2. Project: GYMtool e selezionare Project Interpreter
