@@ -44,7 +44,8 @@ flask run
 1. Recarsi in *File -> Setting* 
 2. Project: GYMtool e selezionare Project Interpreter
 3. Click sulla rotella e poi su add come in figura: 
-![alt text](https://github.com/sergiosolmonte/GYMtool/blob/main/add.png?raw=true width="100px")
+<img src="https://github.com/sergiosolmonte/GYMtool/blob/main/add.png?raw=true" width="100" height="100"/>
+
 4. Selezionare Existing Environment e poi su OK:
 ![alt text](https://github.com/sergiosolmonte/GYMtool/blob/main/existing.png?raw=true)
 5. Click su apply e poi OK
