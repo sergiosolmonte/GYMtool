@@ -48,7 +48,7 @@ flask run
 4. Selezionare Existing Environment e poi su OK:
 <img src="https://github.com/sergiosolmonte/GYMtool/blob/main/existing.png?raw=true" width="500" height="400"/>
 
-Se non esce in automatico il PATH, selzionare la cartella del progetto GYMtool -> venv -> Scripts e cliccare su python.exe.
+**N.b. Se non esce in automatico il PATH, selzionare la cartella del progetto GYMtool -> venv -> Scripts e cliccare su python.exe.
 
 5. Click su apply e poi OK
 <img src="https://github.com/sergiosolmonte/GYMtool/blob/main/apply.png?raw=true" width="500" height="400"/>
