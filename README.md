@@ -50,7 +50,7 @@ flask run
 5. Click su apply e poi OK
 <img src="https://github.com/sergiosolmonte/GYMtool/blob/main/apply.png?raw=true" width="500" height="400"/>
 6. Andare di nuovo in edit configuration e selezionare il nuovo python interpreter appena aggiunto:
-<img src="https://github.com/sergiosolmonte/GYMtool/blob/main/new_interpreter.png?raw=true" width="500" height="400"/>
+<img src="https://github.com/sergiosolmonte/GYMtool/blob/main/new_interpreter.png?raw=true" width="600" height="400"/>
 7. Apply e poi Ok
 
 Ora il progetto è configurato al 100% ed è possibile avviarlo tramite il RUN del pycharm.
