@@ -47,7 +47,7 @@ flask run
 <img src="https://github.com/sergiosolmonte/GYMtool/blob/main/add.png?raw=true" width="500" height="400"/>
 4. Selezionare Existing Environment e poi su OK:
 <img src="https://github.com/sergiosolmonte/GYMtool/blob/main/existing.png?raw=true" width="500" height="400"/>
-Se non esce in automatico il PATH, seelzionare la cartella del progetto GYMtool -> venv -> Scripts e cliccare su **python.exe** 
+Se non esce in automatico il PATH, seelzionare la cartella del progetto GYMtool -> venv -> Scripts e cliccare su **python.exe 
 <br> 5. Click su apply e poi OK
 <img src="https://github.com/sergiosolmonte/GYMtool/blob/main/apply.png?raw=true" width="500" height="400"/>
 6. Andare di nuovo in edit configuration e selezionare il nuovo python interpreter appena aggiunto:
