@@ -44,14 +44,13 @@ flask run
 1. Recarsi in *File -> Setting* 
 2. Project: GYMtool e selezionare Project Interpreter
 3. Click sulla rotella e poi su add come in figura: 
-<img src="https://github.com/sergiosolmonte/GYMtool/blob/main/add.png?raw=true" width="100" height="100"/>
-
+<img src="https://github.com/sergiosolmonte/GYMtool/blob/main/add.png?raw=true" width="500" height="400"/>
 4. Selezionare Existing Environment e poi su OK:
-![alt text](https://github.com/sergiosolmonte/GYMtool/blob/main/existing.png?raw=true)
+<img src="https://github.com/sergiosolmonte/GYMtool/blob/main/existing.png?raw=true" width="500" height="400"/>
 5. Click su apply e poi OK
-![alt text](https://github.com/sergiosolmonte/GYMtool/blob/main/apply.png?raw=true)
+<img src="https://github.com/sergiosolmonte/GYMtool/blob/main/apply.png?raw=true" width="500" height="400"/>
 6. Andare di nuovo in edit configuration e selezionare il nuovo python interpreter appena aggiunto:
-![alt text](https://github.com/sergiosolmonte/GYMtool/blob/main/new_interpreter.png?raw=true)
+<img src="https://github.com/sergiosolmonte/GYMtool/blob/main/new_interpreter.png?raw=true" width="500" height="400"/>
 7. Apply e poi Ok
 
 Ora il progetto è configurato al 100% ed è possibile avviarlo tramite il RUN del pycharm.
